@@ -1,0 +1,27 @@
+---
+pipeline:
+  clone:
+    image: plugins/git
+    tags: true
+
+  build:
+    privileged: true
+    image: rancher/dapper:1.11.2
+    environment:
+    - DRONE_BRANCH=${DRONE_BRANCH}
+    - DRONE_COMMIT=${DRONE_COMMIT}
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+    - dapper publish
+
+  rancher-catalog:
+    image: registry.console.rocks/drone-rancher-catalog:v1.1.0
+    docker_username: wayne
+    docker_password: q
+    docker_repo: devops-demo-app
+    docker_url: https://registry.console.rocks
+    catalog_repo: waynz0r/rancher-devops-demo-app
+    github_token: ${GITHUB_TOKEN}
+    github_user: waynz0r
+    github_email: wayne@console.hu
