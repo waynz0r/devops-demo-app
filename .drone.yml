@@ -18,6 +18,7 @@ pipeline:
     - /var/run/docker.sock:/var/run/docker.sock
     commands:
     - dapper publish
+    - export
 
   rancher:
     image: registry.console.rocks/drone-rancher:latest
