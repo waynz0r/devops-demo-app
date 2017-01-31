@@ -14,6 +14,7 @@ pipeline:
     - /var/run/docker.sock:/var/run/docker.sock
     commands:
     - dapper publish
+    - ls -al
     - export PLUGIN_DOCKER_IMAGE=registry.console.rocks/devops-demo-app:v1.0.2
 
   akarmi:
