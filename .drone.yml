@@ -18,8 +18,8 @@ pipeline:
     - /var/run/docker.sock:/var/run/docker.sock
     - /drone/src/github.com/waynz0r/devops-demo-app:/workspace
     commands:
-    - dapper publish
     - ls -al /workspace
+    - dapper publish
 
   rancher:
     image: registry.console.rocks/drone-rancher:latest
