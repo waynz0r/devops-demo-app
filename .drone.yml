@@ -16,7 +16,7 @@ pipeline:
     - dapper publish
     - ls -al
     - export PLUGIN_DOCKER_IMAGE=registry.console.rocks/devops-demo-app:v1.0.2
-    - export DRONE_PLUGIN_DOCKER_IMAGE=registry.console.rocks/devops-demo-app:v1.0.2
+    - export DRONE_COMMIT_REF=registry.console.rocks/devops-demo-app:v1.0.2
     - export
 
   akarmi:
