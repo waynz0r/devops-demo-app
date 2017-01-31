@@ -7,6 +7,5 @@ source $(dirname $0)/package
 docker push ${REPO}/${PKG}:${TAG}
 
 echo Pushed ${REPO}/${PKG}:${TAG}
-export
-mount
-echo PLUGIN_DOCKER_IMAGE=${REPO}/${PKG}:${TAG} > /drone/src/github.com/waynz0r/devops-demo-app/.env
+
+echo PLUGIN_DOCKER_IMAGE=${REPO}/${PKG}:${TAG} >.env
