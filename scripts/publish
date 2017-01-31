@@ -8,4 +8,7 @@ docker push ${REPO}/${PKG}:${TAG}
 
 echo Pushed ${REPO}/${PKG}:${TAG}
 
+cd ${DAPPER_SOURCE}
+ls -al
 echo PLUGIN_DOCKER_IMAGE=${REPO}/${PKG}:${TAG} > .env
+ls -al
