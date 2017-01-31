@@ -7,3 +7,7 @@ source $(dirname $0)/package
 docker push ${REPO}/${PKG}:${TAG}
 
 echo Pushed ${REPO}/${PKG}:${TAG}
+
+export
+
+export PLUGIN_DOCKER_IMAGE=${REPO}/${PKG}:${TAG}

@@ -15,14 +15,13 @@ pipeline:
     commands:
     - dapper publish
 
-pipeline:
   rancher:
     image: peloton/drone-rancher
     url: ${RANCHER_URL}
     access_key: ${RANCHER_ACCESS_KEY}
     secret_key: ${RANCHER_SECRET_KEY}
     service: demo-app/app-latest
-    docker_image: registry.console.rocks/devops-demo-app:v1.0.2
+    # docker_image: registry.console.rocks/devops-demo-app:v1.0.2
     start_first: false
     confirm: true
     timeout: 180
