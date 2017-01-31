@@ -15,13 +15,21 @@ pipeline:
     commands:
     - dapper publish
 
-  rancher-catalog:
-    image: registry.console.rocks/drone-rancher-catalog:v1.1.0
-    docker_username: wayne
-    docker_password: q
-    docker_repo: devops-demo-app
-    docker_url: https://registry.console.rocks
-    catalog_repo: waynz0r/rancher-devops-demo-app
-    github_token: ${GITHUB_TOKEN}
-    github_user: waynz0r
-    github_email: wayne@console.hu
+pipeline:
+  rancher:
+    image: peloton/drone-rancher
+    url: ${RANCHER_URL}
+    access_key: ${RANCHER_ACCESS_KEY}
+    secret_key: ${RANCHER_SECRET_KEY}
+    service: demo-app/app-latest
+    docker_image: registry.console.rocks/devops-demo-app:v1.0.2
+  # rancher-catalog:
+  #   image: registry.console.rocks/drone-rancher-catalog:v1.1.0
+  #   docker_username: wayne
+  #   docker_password: q
+  #   docker_repo: devops-demo-app
+  #   docker_url: https://registry.console.rocks
+  #   catalog_repo: waynz0r/rancher-devops-demo-app
+  #   github_token: ${GITHUB_TOKEN}
+  #   github_user: waynz0r
+  #   github_email: wayne@console.hu
