@@ -15,6 +15,11 @@ pipeline:
     commands:
     - dapper publish
 
+  akarmi:
+    image: alpine:latest
+    commands:
+    - export
+
   rancher:
     image: peloton/drone-rancher
     url: ${RANCHER_URL}
