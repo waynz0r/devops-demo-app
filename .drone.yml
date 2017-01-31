@@ -1,4 +1,8 @@
 ---
+workspace:
+  base: /drone
+  path: src/github.com/waynz0r/devops-demo-app
+          
 pipeline:
   clone:
     image: plugins/git
@@ -12,11 +16,10 @@ pipeline:
     - DRONE_COMMIT=${DRONE_COMMIT}
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+    - /drone/src/github.com/waynz0r/devops-demo-app:/workspace
     commands:
     - dapper publish
-    - pwd
-    - ls -al
-    - cat /drone/src/github.com/waynz0r/devops-demo-app/.env
+    - ls -al /workspace
 
   rancher:
     image: registry.console.rocks/drone-rancher:latest
