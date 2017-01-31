@@ -15,10 +15,11 @@ pipeline:
     commands:
     - dapper publish
     - pwd
+    - cat /drone/src/github.com/waynz0r/devops-demo-app/.env
 
   rancher:
     image: registry.console.rocks/drone-rancher:latest
-    env_file: .env
+    env_file: /drone/src/github.com/waynz0r/devops-demo-app/.env
     url: ${RANCHER_URL}
     access_key: ${RANCHER_ACCESS_KEY}
     secret_key: ${RANCHER_SECRET_KEY}
