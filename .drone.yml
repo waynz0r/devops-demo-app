@@ -15,6 +15,7 @@ pipeline:
     commands:
     - dapper publish
     - pwd
+    - ls -al
     - cat /drone/src/github.com/waynz0r/devops-demo-app/.env
 
   rancher:
