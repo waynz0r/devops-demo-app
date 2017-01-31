@@ -18,7 +18,7 @@ pipeline:
     - /var/run/docker.sock:/var/run/docker.sock
     commands:
     - mount
-    - dapper -m bind publish
+    - dapper publish
     - mount
     - ls -al /drone/src/github.com/waynz0r/devops-demo-app
 
