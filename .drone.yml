@@ -18,6 +18,7 @@ pipeline:
     - /var/run/docker.sock:/var/run/docker.sock
     - /drone/src/github.com/waynz0r/devops-demo-app:/workspace
     commands:
+    - mount
     - ls -al /workspace
     - dapper publish
 
