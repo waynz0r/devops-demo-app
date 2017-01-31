@@ -23,6 +23,9 @@ pipeline:
     secret_key: ${RANCHER_SECRET_KEY}
     service: demo-app/app-latest
     docker_image: registry.console.rocks/devops-demo-app:v1.0.2
+    start_first: false
+    confirm: true
+    timeout: 180
   # rancher-catalog:
   #   image: registry.console.rocks/drone-rancher-catalog:v1.1.0
   #   docker_username: wayne
