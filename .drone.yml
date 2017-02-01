@@ -22,7 +22,7 @@ pipeline:
 
   rancher:
     image: registry.console.rocks/drone-rancher:latest
-    env_file: /drone/src/github.com/waynz0r/devops-demo-app/.env
+    env_file: .env
     url: ${RANCHER_URL}
     access_key: ${RANCHER_ACCESS_KEY}
     secret_key: ${RANCHER_SECRET_KEY}
