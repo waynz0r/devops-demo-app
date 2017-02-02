@@ -1,0 +1,32 @@
+---
+workspace:
+  base: /drone
+  path: src/github.com/waynz0r/devops-demo-app
+
+pipeline:
+  clone:
+    image: plugins/git
+    tags: true
+
+  build:
+    privileged: true
+    image: rancher/dapper:1.11.2
+    environment:
+    - DRONE_BRANCH=${DRONE_BRANCH}
+    - DRONE_COMMIT=${DRONE_COMMIT}
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+    - dapper publish
+
+  rancher:
+    image: registry.console.rocks/drone-rancher:latest
+    env_file: .env
+    url: ${RANCHER_URL}
+    access_key: ${RANCHER_ACCESS_KEY}
+    secret_key: ${RANCHER_SECRET_KEY}
+    service: demo-app/app-latest
+    docker_image: ${PLUGIN_DOCKER_IMAGE}
+    start_first: false
+    confirm: true
+    timeout: 180
