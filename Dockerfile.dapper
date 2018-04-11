@@ -1,4 +1,4 @@
-FROM dregistry.fotex.net/buildbase:v1.0.0
+FROM waynz0r/buildbase:v1.0.0
 
 ENV DAPPER_SOURCE /tmp/build
 ENV DAPPER_DOCKER_SOCKET true
