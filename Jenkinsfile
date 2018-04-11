@@ -7,7 +7,7 @@ pipeline {
                 ansiColor('xterm') {
                     echo 'Building..'
                     sh '''
-                    export
+                    make
                     '''
                 }
             }
